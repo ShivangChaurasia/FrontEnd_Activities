@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOS + Tailwind Scroll Animation</title>
+
+  <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- ✅ Smooth Scroll CSS -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="scroll-smooth">
+
+  <!-- ✅ Sections with Animation -->
+  <section class="h-screen bg-gray-800 text-white flex items-center justify-center">
+    <h1 class="text-5xl font-bold" data-aos="fade-up">Section 1</h1>
+  </section>
+
+  <section class="h-screen bg-blue-600 text-white flex items-center justify-center">
+    <h1 class="text-5xl font-bold" data-aos="fade-left">Section 2</h1>
+  </section>
+
+  <section class="h-screen bg-green-500 text-white flex items-center justify-center">
+    <h1 class="text-5xl font-bold" data-aos="zoom-in">Section 3</h1>
+  </section>
+
+  <!-- ✅ AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,     // animation duration
+      easing: 'ease-in-out',
+      once: true          // only once on scroll
+    });
+  </script>
+</body>
+</html>

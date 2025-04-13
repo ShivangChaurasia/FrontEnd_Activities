@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="https://w7.pngwing.com/pngs/233/436/png-transparent-logo-agriculture-computer-icons-agriculture-miscellaneous-leaf-company-thumbnail.png">
+    <title>Equipment - AgroTools</title>
+    <link href="output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!--scroll on view-->
+    <style>
+        .Head1 {
+            color: green;
+            transition: color 0.3s;
+        }
+
+        .Head1-container:hover .Head1 {
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 z-[-1]">
+    <!-- Lottie Loader -->
+    <div id="page-loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <div id="lottie-container" class="w-64 h-64"></div> <!-- w-24 = 96px, h-24 = 96px -->
+    </div>
+    <!-- Header -->
+    <header class="shadow-md sticky top-0 backdrop-blur-lg bg-white/50 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="Home.html" class="flex items-center space-x-2 group Head1-container">
+                <span class="text-4xl font-bold text-gray-800 hover:text-green-600 transition-colors flex">
+
+                    <span class="text-green-500 Head1">🌿A</span>
+                    gro
+                    <span class="text-green-500 Head1">T</span>
+                    ools
+                </span>
+                <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-2xl mx-8">
+                <input id="search" placeholder="Search for products..."
+                    class="w-full px-6 py-3 rounded-full border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all bg-white/90 shadow-sm hover:shadow-md">
+                <span class="material-icons absolute right-6 top-3 text-gray-400">search</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-4">
+                <a href="LoginSignup.html">
+                    <button
+                        class="flex items-center space-x-2 px-4 py-2 bg-green-500 text-white rounded-full hover:shadow-lg hover:scale-105 transition-all">
+                        <span class="material-icons">person</span>
+                        <span>Login</span>
+                    </button>
+                </a>
+
+                <a href="cart.html">
+                <button
+                    class="flex items-center space-x-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 hover:scale-105 text-gray-700 rounded-full transition-all">
+                    <span class="material-icons">shopping_cart</span>
+                    <span>Cart</span>
+                    <span class="bg-green-500 text-white px-2 rounded-full text-sm">0</span>
+                </button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-green-500 to-green-600 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-8 py-3">
+                <a href="Home.html"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">home</span>
+                    Home
+                </a>
+                <a href="Seeds.html"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">spa</span>
+                    Seeds
+                </a>
+                <a href="Tools.html"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">construction</span>
+                    Tools
+                </a>
+                <a href="Equipment.html"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">agriculture</span>
+                    Equipment
+                </a>
+            </div>
+        </div>
+    </nav>
+    <script>
+
+        // Navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.transform = 'translateY(-2px)';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+
+
+<div class="flex justify-center p-4">
+    <div class="border-2 shadow-lg p-4 rounded-lg items-center text-center">
+        <div id="Empty_cart" class="h-[200px] "></div>
+      <h1 class="text-lg font-semibold mb-2 ">Missing Cart items?</h1>
+      <p>Login to see the items you added previously</p>
+      <a href="LoginSignup.html">
+      <button class="bg-green-600 text-white rounded-lg p-4 w-[150px] font-bold mt-5 hover:scale-110 transition-transform">Login</button>
+      </a>
+    </div>
+  </div>
+  
+  <script>
+    // Load Lottie animation into #empty-cart-animation
+    lottie.loadAnimation({
+      container: document.getElementById('Empty_cart'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'cartempty.json' // 👉 Replace with your JSON animation path
+    });
+  </script>
+  
+
+
+  <footer class="bg-green-100 text-black p-8">
+    <div class="flex space-x-16 justify-between ">
+        <!--about agrotools-->
+        <div>
+            <h2 class="text-xl font-semibold">About <span class="text-green-500">AgroTools</span></h2>
+            <p class="text-md text-gray-600 mt-2 leading-relaxed">
+                We specialize in high-quality seeds,<br> farming tools, and modern agricultural<br> equipment.
+                Our mission is to empower<br> farmers with innovative solutions for a<br> sustainable future.
+            </p>
+        </div>
+        <!-- Quick Links -->
+        <div>
+            <h2 class="text-xl font-semibold">Quick<span class="text-green-500"> Links</span></h2>
+            <ul class="mt-2 text-md mb-3 space-y-3">
+                <li><a href="Home.html" class="text-gray-600 hover:text-green-500 transition">🌱 Home</a></li>
+                <li><a href="Seeds.html" class="text-gray-600 hover:text-green-500 transition">🌾 Seeds</a></li>
+                <li><a href="Tools.html" class="text-gray-600 hover:text-green-500 transition">🛠 Tools</a></li>
+                <li><a href="Equipment.html" class="text-gray-600 hover:text-green-500 transition">🔨 Equipments</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Customer Support -->
+        <div>
+            <h2 class="text-xl font-semibold ">Customer <span class="text-green-500">Support</h2>
+            <ul class="mt-2 space-y-2 ">
+                <li class="flex items-center space-x-1">
+                    <span class="material-icons text-green-500">phone</span>
+                    <a href="tel:+911234567890" class="text-gray-600 text-sm">+91 123 456 7890</a>
+                </li>
+                <li class="flex items-center space-x-1">
+                    <span class="material-icons text-green-500 ">email</span>
+                    <a href="mailto:support@agrotools.com" class="text-gray-600 text-sm">
+                        support@agrotools.com
+                    </a>
+                </li>
+                <li class="flex items-center space-x-1">
+                    <span class="material-icons text-green-500">location_on</span>
+                    <span class="text-gray-600 text-sm">Agro Street, Green Valley, India</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Newsletter Subscription -->
+        <div>
+            <h2 class="text-xl font-semibold">Stay <span class="text-green-500">Updated</span></h2>
+            <p class="text-md text-gray-600 mt-3 leading-relaxed">
+                Subscribe to our newsletter for exclusive discounts and expert farming tips.
+            </p>
+            <div class="mt-3 flex">
+                <input type="email" placeholder="Enter your email"
+                    class="w-[400px] px-5 py-3 h-[40px] rounded-l-md border border-gray-500 text-gray-900 focus:ring-green-500 focus:ring text-md rounded-lg transition-all">
+                <button class="bg-green-500 px-5 h-[40px]  rounded-lg hover:bg-green-600 transition text-md ml-2">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="border-t border-gray-500 mt-2 pt-6 flex flex-col md:flex-row justify-between text-gray-600 text-sm">
+        <p>© 2024 AgroTools. All rights reserved.</p>
+        <h1 class="text-end text-gray-600">Made with 💚 by Agroteam</h1>
+        <div class="flex space-x-6">
+            <a href="#" class="hover:text-gray-400 transition">Privacy Policy</a>
+            <a href="#" class="hover:text-gray-400 transition">Terms & Conditions</a>
+        </div>
+    </div>
+    </div>
+</footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var loader = document.getElementById("page-loader");
+
+            // Load Lottie Animation
+            var animation = lottie.loadAnimation({
+                container: document.getElementById('lottie-container'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'animation2.json' // Replace with your Lottie JSON file
+            });
+
+            // Hide loader once the page is fully loaded
+            window.onload = function () {
+                loader.style.opacity = "0";
+                setTimeout(() => loader.style.display = "none", 500);
+            };
+
+            // Show loader before navigating to another page
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    let url = this.href;
+
+                    if (url.includes(".html")) { // Only apply effect for internal pages
+                        e.preventDefault();
+                        loader.style.opacity = "1";
+                        loader.style.display = "flex";
+
+                        setTimeout(() => {
+                            window.location.href = url;
+                        }, 1500); // Adjust delay as needed
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+
+</body>
+
+</html>

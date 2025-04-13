@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="https://w7.pngwing.com/pngs/233/436/png-transparent-logo-agriculture-computer-icons-agriculture-miscellaneous-leaf-company-thumbnail.png">
+    <title>AgroTools- Home </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!--scroll on view-->
+
+
+    <style>
+        .Head1 {
+            color: green;
+            transition: color 0.3s;
+        }
+
+        .Head1-container:hover .Head1 {
+            color: black;
+        }
+
+        /* Loader Styling */
+        #page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #cardTrack {
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        #cardTrack::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Edge */
+        }
+    </style>
+
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Lottie Loader -->
+    <div id="page-loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <div id="lottie-container" class="w-64 h-64"></div> <!-- w-24 = 96px, h-24 = 96px -->
+    </div>
+
+
+
+
+    <!-- Header -->
+    <header class="shadow-xl sticky backdrop-blur-lg top-0 bg-white/50 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="Home.html" class="flex items-center space-x-2 group Head1-container">
+                <span class="text-4xl font-bold text-gray-800 hover:text-green-600 transition-colors flex">
+
+                    <span class="text-green-500 Head1">🌿A</span>
+                    gro
+                    <span class="text-green-500 Head1">T</span>
+                    ools
+                </span>
+                <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-2xl mx-8">
+                <input id="search" placeholder="Search for products..."
+                    class="w-full px-6 py-3 rounded-full border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all bg-white/90 shadow-sm hover:shadow-md">
+                <span class="material-icons absolute right-6 top-3 text-gray-400">search</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-4">
+                <a href="LoginSignup.html">
+                    <button id="login"
+                        class="flex items-center space-x-2 px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full hover:shadow-lg transform hover:scale-105 transition-all">
+                        <span class="material-icons">person</span>
+                        <span>Login</span>
+                    </button>
+                </a>
+
+                <a href="cart.html">
+                <button id="cart"
+                    class="flex items-center space-x-2 px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-all hover:scale-105">
+                    <span class="material-icons">shopping_cart</span>
+                    <span>Cart</span>
+                    <span class="bg-green-500 text-white px-2 rounded-full text-sm">0</span>
+                </button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-green-500 to-green-600 shadow-md sticky top-0">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-8 py-3">
+                <a href="Home.html" id="home"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">home</span>
+                    Home
+                </a>
+                <a href="Seeds.html" id="seeds"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">spa</span>
+                    Seeds
+                </a>
+                <a href="Tools.html" id="tools"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">construction</span>
+                    Tools
+                </a>
+                <a href="Equipment.html" id="equipment"
+                    class="flex items-center py-2 px-4 text-white/90 hover:text-white font-medium group transition-all">
+                    <span class="material-icons mr-2 group-hover:animate-bounce">agriculture</span>
+                    Equipment
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="relative ">
+        <div class="container mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-12 md:mb-0 space-y-8 ml-10 mr-10">
+                <h1 class="text-5xl font-bold text-gray-800" data-aos="fade-up" data-aos-delay="200">
+                    Grow Your Farm with
+                    <span class="text-green-600" data-aos="fade-up" data-aos-delay="200">Premium Supplies📦</span>
+                </h1>
+                <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="400">
+                    Everything you need for modern farming - delivered to your doorstep!
+                </p>
+                <a href="LoginSignup.html" id="shopnow"
+                    class="inline-block px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-full text-lg font-semibold"
+                    data-aos="fade-up" data-aos-delay="600">
+                    Shop Now 🛍️➔
+                </a>
+
+
+            </div>
+            <!--lottie animation-->
+            <div class=" md:w-1/2 flex justify-center" data-aos="fade-up" data-aos-delay="100">
+                <div id="lottie-animation" class="w-full max-w-lg"></div>
+            </div>
+        </div>
+        <div>
+            <script>
+                var animation = lottie.loadAnimation({
+                    container: document.getElementById('lottie-animation'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: 'HomeA1.json'
+                });
+            </script>
+        </div>
+    </div>
+
+
+    <!-- Our Products -->
+    <div>
+        <h1 class="ml-[100px] text-[80px] font-bold" data-aos="fade-up" data-aos-delay="200">Our <span
+                class="text-green-600 font-bold">Categories 🛒</span></h1>
+
+        <div class="flex justify-center space-x-[250px] mt-20">
+            <div>
+                <h1 class="mt-[150px] text-[50px] font-semibold" data-aos="fade-up" data-aos-delay="200">Seeds 🫘</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Seeds are the foundation of crop production.<br> The quality
+                    of seeds plays a vital role in<br> determining crop yield and health.<br> There are different types
+                    of seeds based<br> on their origin and genetic makeup.</p>
+                <a href="Seeds.html">
+                    <div class="border-2 border-black rounded-full w-[100px] h-[100px] p-2 text-sm mt-5 hover:bg-black hover:text-white hover:font-semibold hover:border-0 "
+                        data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="px-4 py-7 font-bold">Explore</h3>
+                    </div>
+                </a>
+            </div>
+            <video autoplay muted loop playsinline src="SeedsCollage.mp4"
+                class="w-[500px] h-[620px] rounded-xl object-cover" data-aos="fade-up-left"
+                data-aos-delay="200"></video>
+        </div>
+
+
+
+
+
+        <div class="flex justify-center space-x-[250px] mt-20">
+            <video autoplay muted loop playsinline src="EquipmentCollage.mp4"
+                class="w-[500px] h-[620px] rounded-xl object-cover ml-[100px]" data-aos="fade-up-right"
+                data-aos-delay="200"></video>
+            <div>
+                <h1 class="mt-[150px] text-[50px] font-semibold " data-aos="fade-up" data-aos-delay="200">Equipments 🚜
+                </h1>
+                <p class="mr-[80px]" data-aos="fade-up" data-aos-delay="200">Agricultural equipment refers to the
+                    various machines<br> and tools used to improve efficiency, save labor, and<br> increase productivity
+                    in farming and gardening. These<br>machines help in all stages of crop production—from<br> preparing
+                    the soil to planting, irrigating, harvesting,<br> and storing crops.</p>
+
+                <a href="Equipment.html">
+                    <div class="border-2 border-black rounded-full w-[100px] h-[100px] p-2 text-sm mt-5 hover:bg-black hover:text-white hover:font-semibold hover:border-0 "
+                        data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="px-4 py-7 font-bold">Explore</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="flex justify-center space-x-[250px] mt-20">
+            <div>
+                <h1 class="mt-[150px] text-[50px] font-semibold" data-aos="fade-up" data-aos-delay="200">Tools 🔧</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Tools are simple hand-held instruments<br> used by farmers
+                    and gardeners to perform<br> various tasks such as digging, planting,<br> weeding, pruning, and
+                    harvesting. They are<br> essential for small-scale farming, kitchen<br> gardens, and even in large
+                    agricultural<br> operations for specific manual jobs.</p>
+                <a href="Tools.html">
+                    <div class="border-2 border-black rounded-full w-[100px] h-[100px] p-2 text-sm mt-5 hover:bg-black hover:text-white hover:font-semibold hover:border-0 "
+                        data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="px-4 py-7 font-bold">Explore</h3>
+                    </div>
+                </a>
+            </div>
+            <video autoplay muted loop playsinline src="Toolscollage.mp4"
+                class="w-[500px] h-[620px] rounded-xl object-cover" data-aos="fade-up-left"
+                data-aos-delay="200"></video>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Our Latest Products Section -->
+    <h1 class="text-[80px] font-bold ml-12 text-gray-800 mt-[100px]" data-aos="fade-up" data-aos-delay="100">
+        Our Latest <span class="text-green-600">Products</span>
+    </h1>
+    <div class="container mx-auto px-4 mt-[100px]" data-aos="fade-up" data-aos-delay="100">
+        <div class="grid grid-cols-5 gap-x-6 gap-y-10">
+            <!-- Product 1 -->
+            <div
+                class="group shadow-lg border border-gray-300 hover:scale-105 transition-transform duration-300 rounded-lg p-4 bg-white">
+                <p class="px-3 py-1 text-white bg-green-600 w-max rounded-full">Sale</p>
+                <a href="#"><img src="Nutrient1.avif" alt="Nutrient1"
+                        class="w-full h-40 object-cover  transition-transform duration-500"></a>
+                <h3 class="text-center font-medium mt-2">Product 1</h3>
+                <p class="text-center text-gray-600">From Rs.300/pack</p>
+                <div class="flex gap-2 mt-3">
+                    <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Add
+                    </button>
+                    <button class="flex-1 bg-white hover:bg-gray-50 text-green-600 border-2 border-green-600 py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        Buy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div
+                class="group shadow-lg border border-gray-300 hover:scale-105 transition-transform duration-300 rounded-lg p-4 bg-white">
+                <p class="px-3 py-1 text-white bg-green-600 w-max rounded-full">Sale</p>
+                <a href="#"><img src="Nutrient7.avif" alt="Nutrient1"
+                        class="w-full h-40 object-cover  transition-transform duration-500"></a>
+                <h3 class="text-center font-medium mt-2">Product 2</h3>
+                <p class="text-center text-gray-600">From Rs.300/pack</p>
+                <div class="flex gap-2 mt-3">
+                    <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Add
+                    </button>
+                    <button class="flex-1 bg-white hover:bg-gray-50 text-green-600 border-2 border-green-600 py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        Buy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div
+                class="group shadow-lg border border-gray-300 hover:scale-105 transition-transform duration-300 rounded-lg p-4 bg-white">
+                <p class="px-3 py-1 text-white bg-green-600 w-max rounded-full">Sale</p>
+                <a href="#"><img src="product2.png" alt="Nutrient1"
+                        class="w-full h-40 object-cover  transition-transform duration-500"></a>
+                <h3 class="text-center font-medium mt-2">Product 3</h3>
+                <p class="text-center text-gray-600">From Rs.300/pack</p>
+                <div class="flex gap-2 mt-3">
+                    <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Add
+                    </button>
+                    <button class="flex-1 bg-white hover:bg-gray-50 text-green-600 border-2 border-green-600 py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        Buy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div
+                class="group shadow-lg border border-gray-300 hover:scale-105 transition-transform duration-300 rounded-lg p-4 bg-white">
+                <p class="px-3 py-1 text-white bg-green-600 w-max rounded-full">Sale</p>
+                <a href="#"><img src="product4.png" alt="Nutrient1"
+                        class="w-full h-40 object-cover  transition-transform duration-500"></a>
+                <h3 class="text-center font-medium mt-2">Product 4</h3>
+                <p class="text-center text-gray-600">From Rs.300/pack</p>
+                <div class="flex gap-2 mt-3">
+                    <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Add
+                    </button>
+                    <button class="flex-1 bg-white hover:bg-gray-50 text-green-600 border-2 border-green-600 py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        Buy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div
+                class="group shadow-lg border border-gray-300 hover:scale-105 transition-transform duration-300 rounded-lg p-4 bg-white">
+                <p class="px-3 py-1 text-white bg-green-600 w-max rounded-full">Sale</p>
+                <a href="#"><img src="product3.png" alt="Nutrient1"
+                        class="w-full h-40 object-cover transition-transform duration-500"></a>
+                <h3 class="text-center font-medium mt-2">Product 5</h3>
+                <p class="text-center text-gray-600">From Rs.300/pack</p>
+                <div class="flex gap-2 mt-3">
+                    <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Add
+                    </button>
+                    <button class="flex-1 bg-white hover:bg-gray-50 text-green-600 border-2 border-green-600 py-2 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        Buy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reviews -->
+    <h1 class="ml-[100px] mt-[100px] mb-10 text-[80px] font-bold" data-aos="fade-up" data-aos-delay="200">Re<span
+            class="text-green-600">views</span></h1>
+
+
+
+    <!-- Slider Wrapper -->
+    <div class="relative w-full overflow-hidden px-10">
+
+        <!-- Scrollable Container -->
+        <div id="cardTrack" class="flex gap-6 overflow-x-auto scroll-smooth">
+            <!-- Card 1 -->
+            <div class="min-w-[500px] max-w-[500px] bg-blue-100 p-6 rounded-2xl shadow flex space-x-6 hover:scale-90 transition-transform "
+                data-aos="flip-up" data-aos-delay="100">
+                <img src="RahulVerma.jpg" alt="Rahul_img" class="w-[240px] h-[240px] rounded-lg">
+                <div>
+                    <h3 class="text-lg font-semibold">Rahul Verma</h3>
+                    <p class="text-sm mt-2">"This platform offers high-quality seeds and reliable farming tools. The
+                        germination rate of seeds is consistently excellent, making it ideal for serious growers.
+                        Delivery is always on time, and the packaging is secure. I now rely on this site for most of my
+                        agricultural needs. Very trustworthy and efficient!"</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="min-w-[500px] max-w-[500px] bg-green-100 p-6 rounded-2xl shadow  flex space-x-6 hover:scale-90 transition-transform"
+                data-aos="flip-up" data-aos-delay="200">
+                <img src="PriyaSharma.jpg" alt="Priya_img" class="w-[240px] h-[240px] rounded-lg">
+                <div>
+                    <h3 class="text-lg font-semibold">Priya Sharma</h3>
+                    <p class="text-sm mt-2">"I love how this site offers a wide variety of seeds and tools, all of great
+                        quality. Deliveries are always timely, which is crucial during the growing season. Everything is
+                        securely packed. It’s my go-to platform now for all farming needs. Reliable service and
+                        excellent customer care every time."</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="min-w-[500px] max-w-[500px] bg-yellow-100 p-6 rounded-2xl shadow flex space-x-6 hover:scale-90 transition-transform"
+                data-aos="flip-up" data-aos-delay="200">
+                <img src="ManojPatel.jpg" alt="Manoj_img" class="w-[240px] h-[240px] rounded-lg">
+                <div>
+                    <h3 class="text-lg font-semibold">Manoj Patel</h3>
+                    <p class="text-sm mt-2">"I purchased a power tiller here and was impressed with the quality. It
+                        arrived on time, well-packaged, and works flawlessly in the field. The machine feels durable and
+                        has made soil preparation much easier. I’ll definitely consider this platform again for future
+                        equipment or farming-related purchases."</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="min-w-[500px] max-w-[500px] bg-pink-100 p-6 rounded-2xl shadow flex space-x-6 hover:scale-90 transition-transform"
+                data-aos="flip-up" data-aos-delay="200">
+                <img src="AshaReaddy.jpg" alt="Asha_img" class="w-[240px] h-[240px] rounded-lg">
+                <div>
+                    <h3 class="text-lg font-semibold">Asha Reddy</h3>
+                    <p class="text-sm mt-2">"The customer support team was incredibly helpful. I had several questions
+                        before placing my order, and they responded promptly with useful answers. It’s refreshing to see
+                        such efficient service. Everything I ordered arrived on time and matched the description. This
+                        platform makes online shopping for farming needs stress-free and smooth."</p>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="min-w-[500px] max-w-[500px] bg-purple-100 p-6 rounded-2xl shadow flex space-x-6 hover:scale-90 transition-transform"
+                data-aos="flip-up" data-aos-delay="200">
+                <img src="RaviYadav.jpg" alt="Ravi_img" class="w-[240px] h-[240px] rounded-lg">
+                <div>
+                    <h3 class="text-lg font-semibold">Ravi Yadav</h3>
+                    <p class="text-sm mt-2">"This has become my regular site for ordering agricultural supplies. Whether
+                        it's seeds, tools, or fertilizers, everything is dependable and of good quality. I’ve placed
+                        multiple orders, and each time the delivery has been timely and correct. It’s reliable,
+                        convenient, and perfect for farmers looking to save time."</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="prevCard"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-lg text-black p-3 rounded-full shadow-lg">
+            &larr;
+        </button>
+        <button id="nextCard"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-lg text-black p-3 rounded-full shadow-lg">
+            &rarr;
+        </button>
+    </div>
+
+    <script>
+        const track = document.getElementById("cardTrack");
+        const next = document.getElementById("nextCard");
+        const prev = document.getElementById("prevCard");
+
+        const scrollStep = 320; // Card width + gap
+
+        next.addEventListener("click", () => {
+            track.scrollBy({ left: scrollStep, behavior: "smooth" });
+        });
+
+        prev.addEventListener("click", () => {
+            track.scrollBy({ left: -scrollStep, behavior: "smooth" });
+        });
+    </script>
+
+
+    <!-- Video Gallery -->
+    <div class="flex space-x-[20px]">
+        <video autoplay loop muted playsinline id="mainVideo" src="homeV1.mp4"
+            class="w-[700px] h-[400px] ml-[50px] relative mt-[100px] rounded-2xl" data-aos="fade-up-right"
+            data-aos-delay="200"></video>
+
+        <div class="flex space-x-6 mt-[115px] rounded-lg" data-aos="fade-up-left" data-aos-delay="200">
+            <div>
+                <video src="homeV1.mp4" class="video-hover w-[300px] h-[176px] mt-[10px] rounded-2xl"
+                    onclick="changeImage(this)"></video>
+                <video src="homeV2.mp4" class="video-hover w-[300px] h-[175px] mt-[10px] rounded-2xl"
+                    onclick="changeImage(this)"></video>
+            </div>
+            <div>
+                <video src="homeV3.mp4" class="video-hover w-[300px] h-[176px] mt-[10px] rounded-2xl"
+                    onclick="changeImage(this)"></video>
+                <video src="homeV4.mp4" class="video-hover w-[300px] h-[176px] mt-[10px] rounded-2xl"
+                    onclick="changeImage(this)"></video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(video) {
+            const mainVideo = document.getElementById("mainVideo");
+            mainVideo.src = video.src;
+            mainVideo.muted = true;      // Ensure muted for autoplay to work
+            mainVideo.currentTime = 0;   // Reset time
+            mainVideo.play();            // Trigger playback
+        }
+
+        const videos = document.querySelectorAll(".video-hover");
+
+        videos.forEach(function (video) {
+            video.addEventListener("mouseover", function () {
+                this.style.border = "2px solid green";
+            });
+
+            video.addEventListener("mouseout", function () {
+                this.style.border = "none";
+            });
+        });
+    </script>
+
+
+
+
+    <!--grow your farm with us-->
+    <div class="bg-green-600 py-4 flex flex-col md:flex-row items-center justify-center gap-6 px-6 md:px-16  mt-20">
+        <img src="image.png" alt="Purity Image" class="w-[90px] h-20 md:h-28 object-contain">
+        <div class="text-center md:text-left">
+            <h1 class="text-xl md:text-4xl font-medium text-white">
+                Grow your <span class="">Farm</span> with us
+            </h1>
+            <p class="text-white text-md mt-1 md:mt-1">
+                Get the best quality seeds and nutrients to boost your farm’s productivity.
+            </p>
+        </div>
+    </div>
+
+
+
+    <!--footer-->
+    <footer class="bg-green-100 text-black p-8">
+        <div class="flex space-x-16 justify-between ">
+            <!--about agrotools-->
+            <div>
+                <h2 class="text-xl font-semibold">About <span class="text-green-500">AgroTools</span></h2>
+                <p class="text-md text-gray-600 mt-2 leading-relaxed">
+                    We specialize in high-quality seeds,<br> farming tools, and modern agricultural<br> equipment.
+                    Our mission is to empower<br> farmers with innovative solutions for a<br> sustainable future.
+                </p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h2 class="text-xl font-semibold">Quick<span class="text-green-500"> Links</span></h2>
+                <ul class="mt-2 text-md mb-3 space-y-3">
+                    <li><a href="Home.html" class="text-gray-600 hover:text-green-500 transition">🌱 Home</a></li>
+                    <li><a href="Seeds.html" class="text-gray-600 hover:text-green-500 transition">🌾 Seeds</a></li>
+                    <li><a href="Tools.html" class="text-gray-600 hover:text-green-500 transition">🛠 Tools</a></li>
+                    <li><a href="Equipment.html" class="text-gray-600 hover:text-green-500 transition">🔨 Equipments</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Customer Support -->
+            <div>
+                <h2 class="text-xl font-semibold ">Customer <span class="text-green-500">Support</h2>
+                <ul class="mt-2 space-y-2 ">
+                    <li class="flex items-center space-x-1">
+                        <span class="material-icons text-green-500">phone</span>
+                        <a href="tel:+911234567890" class="text-gray-600 text-sm">+91 123 456 7890</a>
+                    </li>
+                    <li class="flex items-center space-x-1">
+                        <span class="material-icons text-green-500 ">email</span>
+                        <a href="mailto:support@agrotools.com" class="text-gray-600 text-sm">
+                            support@agrotools.com
+                        </a>
+                    </li>
+                    <li class="flex items-center space-x-1">
+                        <span class="material-icons text-green-500">location_on</span>
+                        <span class="text-gray-600 text-sm">Agro Street, Green Valley, India</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Newsletter Subscription -->
+            <div>
+                <h2 class="text-xl font-semibold">Stay <span class="text-green-500">Updated</span></h2>
+                <p class="text-md text-gray-600 mt-3 leading-relaxed">
+                    Subscribe to our newsletter for exclusive discounts and expert farming tips.
+                </p>
+                <div class="mt-3 flex">
+                    <input type="email" placeholder="Enter your email"
+                        class="w-[400px] px-5 py-3 h-[40px] rounded-l-md border border-gray-500 text-gray-900 focus:ring-green-500 focus:ring text-md rounded-lg transition-all">
+                    <button class="bg-green-500 px-5 h-[40px]  rounded-lg hover:bg-green-600 transition text-md ml-2">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="border-t border-gray-500 mt-2 pt-6 flex flex-col md:flex-row justify-between text-gray-600 text-sm">
+            <p>© 2024 AgroTools. All rights reserved.</p>
+            <h1 class="text-end text-gray-600">Made with 💚 by Agroteam</h1>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-gray-400 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400 transition">Terms & Conditions</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- script -->
+    <script>
+        document.getElementById('shopnow').addEventListener('click', function () {
+            this.style.backgroundColor = 'lightblue';
+        });
+        document.getElementById('login').addEventListener('click', function () {
+            this.style.textColor = 'lightblue';
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var loader = document.getElementById("page-loader");
+
+            // Load Lottie Animation
+            var animation = lottie.loadAnimation({
+                container: document.getElementById('lottie-container'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'animation2.json' // Replace with your Lottie JSON file
+            });
+
+            // Hide loader once the page is fully loaded
+            window.onload = function () {
+                loader.style.opacity = "0";
+                setTimeout(() => loader.style.display = "none", 500);
+            };
+
+            // Show loader before navigating to another page
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    let url = this.href;
+
+                    if (url.includes(".html")) { // Only apply effect for internal pages
+                        e.preventDefault();
+                        loader.style.opacity = "1";
+                        loader.style.display = "flex";
+
+                        setTimeout(() => {
+                            window.location.href = url;
+                        }, 1500); // Adjust delay as needed
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,     // animation duration
+            once: false,       // allow animation to happen more than once
+            mirror: true       // animate elements out while scrolling past them
+        });
+
+    </script>
+
+
+</body>
+
+</html>
